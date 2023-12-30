@@ -27,6 +27,10 @@
     #alert{
         width: 48% !important;
     }
+    label::after{
+        content: "*";
+        color: red;
+    }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <body>
@@ -48,7 +52,7 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <button type="submit" class="btn btn-outline-success" onclick="fillTextBox()">Submit</button>
+                <button type="submit" class="btn btn-outline-success" onclick="validateAdd()">Submit</button>
             </div>
         </div>
     </div>
@@ -62,27 +66,32 @@
 
 <script>
     
-    function fillTextBox (){
+    function validateAdd (){
 
+        const pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        document.getElementById("message").innerText = "";
+        document.getElementById("alert").style.display = "none";
         let name = document.getElementById("name").value;
         let email = document.getElementById("email").value;
-
+        
 
         if (name == null || name == '') {
-           alert(" Please, Enter your First Name");
-           return;
+            alert(" Please, Enter your First Name"); return;        
         }
-
-        if(email == null || email == '')
-        {
-            alert("Please, Enter your Email Id");
-            return;
+            
+        if(email == null || email == ''){
+            alert("Please, Enter your Email Id"); return;
+        }    
+                                
+        if(!pattern.test(email)){
+            alert("Please enter valid Email Id"); return;       
         }
-        
-      let message = `Hey, I am ${name}. My email id is ${email}`; 
-      document.getElementById("alert").style.display = "block";
-      document.getElementById("message").innerText = message;
-        
+                            
+        let message = `Hey, I am ${name}. My email id is ${email}`; 
+        document.getElementById("alert").style.display = "block";
+        document.getElementById("message").innerText = message;
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
         
     } 
     
