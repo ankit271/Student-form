@@ -1,3 +1,3 @@
-let fullname:string = 'Ankit'
-
-console.log(fullname.toLowerCase());
+function getFullName(firstName:string,lastName:string):string{
+   return `Hi My Name is ${firstName + ' ' + lastName}` ;
+}
