@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback</title>
+</head>
+<script src='./dist/callback.js'></script>
+<script>
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js', script => {
+    alert(`Cool, the script ${script.src} is loaded`);
+    alert( _ ); // _ is a function declared in the loaded script
+});
+</script>
+<body>
+    <h1>Hiii</h1>
+</body>
+</html>
