@@ -1,6 +1,6 @@
-const name = {
-    firstName: 'Ankit',
-    lastName: 'Mishra'   
+export default class Person {
+    firstname = 'Ankit';
+    lastname = 'Kumar';
 }
 
-export default name;
+

@@ -1,7 +1,6 @@
-// var x = 5;
+'use strict'
 
-// console.log(x);
-// console.log(y);
+carName = "Volvo";
+var carName;
 
-// var y =7
-alert('hii')
+console.log(carName);
