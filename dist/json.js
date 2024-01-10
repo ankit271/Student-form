@@ -3,8 +3,9 @@ let student = {
     age: 30,
     isAdmin: false,
     courses: ['html', 'css', 'js'],
-    spouse: null
+    spouse: undefined
 };
 
-let json = JSON.stringify(student,null ,2);
+let json = JSON.stringify(student,null,3);
 console.log(json);
+
