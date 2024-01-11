@@ -16,13 +16,13 @@
 //     },1000)    
 // })
 
-// promise.then(function(data){
-//     console.log(data);
+// promise.then(function(res){
+//     console.log(res);
 // })
 // ------------------------
 // const promise = new Promise(function(resolve, reject){
 //     setTimeout(function(){
-//         let error = false;
+//         let error = true;
 //         if(!error){
 //             resolve({username: 'ankit',email: 'abc@gmail.com'});
 //         }

@@ -8,7 +8,7 @@
 //     inner();
 // }
 // outer();
-// console.log('outer', name);
+//console.log('outer', name);
 
 function outer(){
     const name = 'Ankit';
@@ -20,4 +20,4 @@ function outer(){
 }
 
 const myFunc = outer();
-//myFunc();
+myFunc();
