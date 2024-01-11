@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<style>
+    body {
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+</style>
+<body>
+    <div>
+        <p>Some paragraph text</p>
+    <h1>some heading 1 text</h1>
+    <h2>some heading 2 text</h2>
+    </div>
+    <div class="row" style="column-gap: 40px;">
+        <button id="size-12" class="col-md-3 btn btn-primary">12</button>
+        <button id="size-14" class="col-md-3 btn btn-primary">14</button>
+        <button id="size-16" class="col-md-3 btn btn-primary">16</button>
+    </div>
+    
+</body>
+<script>
+    function makeSizer(size) {
+        return function () {
+            document.body.style.fontSize = `${size}px`;
+        };
+    }
+
+    const size12 = makeSizer(12);
+    const size14 = makeSizer(14);
+    const size16 = makeSizer(16);
+
+    document.getElementById("size-12").onclick = size12;
+    document.getElementById("size-14").onclick = size14;
+    document.getElementById("size-16").onclick = size16;
+
+</script>
+</html>   
